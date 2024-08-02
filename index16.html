@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function fetchArticles330to342() {
+            const articles = [
+                { id: 330, title: "Article 330", description: "Article 330 of the Indian Constitution provides for the reservation of seats in the House of the People (Lok Sabha) for Scheduled Castes (SC) and Scheduled Tribes (ST). It ensures that the representation of SCs and STs in the Lok Sabha is proportionate to their population in the respective states." },
+                { id: 331, title: "Article 331", description: "Article 331 allows the President of India to nominate not more than two members of the Anglo-Indian community to the Lok Sabha if he/she believes that the community is not adequately represented. This ensures that the interests of the Anglo-Indian community are safeguarded in the Parliament." },
+                { id: 332, title: "Article 332", description: "Article 332 provides for the reservation of seats for Scheduled Castes and Scheduled Tribes in the Legislative Assemblies of the States. The number of reserved seats is proportionate to the population of SCs and STs in the respective states." },
+                { id: 333, title: "Article 333", description: "Article 333 allows the Governor of a state to nominate one member of the Anglo-Indian community to the Legislative Assembly of the State if he/she believes that the community is not adequately represented. This ensures that the interests of the Anglo-Indian community are safeguarded in the state legislatures." },
+                { id: 334, title: "Article 334", description: "Article 334 initially provided for the reservation of seats for SCs and STs and the representation of the Anglo-Indian community by nomination for a period of ten years from the commencement of the Constitution. This period has been extended by successive amendments to the Constitution." },
+                { id: 335, title: "Article 335", description: "Article 335 states that the claims of the members of the Scheduled Castes and Scheduled Tribes shall be taken into consideration, consistent with the maintenance of efficiency of administration, in the making of appointments to services and posts in connection with the affairs of the Union or of a State." },
+                { id: 336, title: "Article 336", description: "Article 336 provides for special provisions regarding the Anglo-Indian community in certain services. It ensures that during the first two years of the Constitution, appointments of the members of the Anglo-Indian community shall be made to public services in the same proportion as the community's representation in the services immediately before the commencement of the Constitution." },
+                { id: 337, title: "Article 337", description: "Article 337 provides for special educational grants for the Anglo-Indian community for a period of ten years from the commencement of the Constitution. This period can be extended by Parliament by law. These grants are meant to ensure that the community has access to educational opportunities." },
+                { id: 338, title: "Article 338", description: "Article 338 establishes the National Commission for Scheduled Castes (NCSC). The Commission's duties include investigating and monitoring all matters relating to the safeguards provided for SCs, inquiring into specific complaints, and participating in the planning process of socioeconomic development of SCs." },
+                { id: 339, title: "Article 339", description: "Article 339 provides for the control of the Union over the administration of Scheduled Areas and the welfare of Scheduled Tribes. It allows the President to appoint a Commission to report on the administration of these areas and the welfare of the STs." },
+                { id: 340, title: "Article 340", description: "Article 340 provides for the appointment of a Commission to investigate the conditions of socially and educationally backward classes and recommend steps to improve their condition. This Commission plays a crucial role in identifying and addressing the issues faced by backward classes." },
+                { id: 341, title: "Article 341", description: "Article 341 empowers the President to specify the Scheduled Castes in various states and union territories. The President issues a public notification specifying the SCs, which can only be amended by Parliament." },
+                { id: 342, title: "Article 342", description: "Article 342 empowers the President to specify the Scheduled Tribes in various states and union territories. The President issues a public notification specifying the STs, which can only be amended by Parliament." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles330to342;
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Special Provisions Relating to Certain Classes</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>

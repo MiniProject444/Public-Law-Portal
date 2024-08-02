@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function fetchArticles277to289() {
+            const articles = [
+                { id: 277, title: "Article 243ZH", description: "Article 243ZH of the Indian Constitution defines various terms related to cooperative societies. It provides clarity on what constitutes a 'cooperative society', 'multi-State cooperative society', and other relevant terms. This article ensures that there is a common understanding of these terms for the purposes of the Constitution and related laws." },
+                { id: 278, title: "Article 243ZI", description: "Article 243ZI mandates the states to incorporate cooperative societies. It provides that the state shall make laws for the incorporation, regulation, and winding up of cooperative societies based on the principles of voluntary formation, democratic member control, member-economic participation, and autonomous functioning." },
+                { id: 279, title: "Article 243ZJ", description: "Article 243ZJ outlines the requirements regarding the number and tenure of members of the board of a cooperative society and its office bearers. It specifies that the board shall consist of such number of directors as may be provided by the state legislature, and the tenure of the elected members shall be five years from the date of election." },
+                { id: 280, title: "Article 243ZK", description: "Article 243ZK deals with the election of board members of cooperative societies. It mandates that the election of the board members shall be conducted before the expiry of the term of the existing board. The article ensures free, fair, and timely elections to maintain the democratic functioning of cooperative societies." },
+                { id: 281, title: "Article 243ZL", description: "Article 243ZL provides for the supersession and suspension of the board of a cooperative society. It allows the state government to supersede or suspend the board if it fails to perform its duties or acts against the interest of the society. However, such supersession or suspension cannot exceed six months, and elections must be held to form a new board." },
+                { id: 282, title: "Article 243ZM", description: "Article 243ZM mandates the audit of accounts of cooperative societies. It ensures that the accounts are audited by an auditor or auditing firm from a panel approved by the state government. The article aims to maintain transparency and accountability in the financial operations of cooperative societies." },
+                { id: 283, title: "Article 243ZN", description: "Article 243ZN specifies the requirement for convening general body meetings of cooperative societies. It mandates that the general body shall meet at least once in a year to discuss and approve the budget, annual report, and accounts. This article promotes democratic decision-making and participation of members in the affairs of the society." },
+                { id: 284, title: "Article 243ZO", description: "Article 243ZO provides the right of members of cooperative societies to access information. It ensures that members have the right to inspect the books of accounts, records, and other documents of the society. This article empowers members to stay informed about the activities and financial status of their society." },
+                { id: 285, title: "Article 243ZP", description: "Article 243ZP mandates cooperative societies to file annual returns with the registrar. The returns should include details about the audited statements of accounts, annual reports, and other specified information. This article ensures regulatory oversight and compliance with statutory requirements by cooperative societies." },
+                { id: 286, title: "Article 243ZQ", description: "Article 243ZQ deals with offenses and penalties related to cooperative societies. It specifies the penalties for various offenses such as failure to file returns, falsification of records, and non-compliance with orders of the registrar. This article aims to deter misconduct and ensure the proper functioning of cooperative societies." },
+                { id: 287, title: "Article 243ZR", description: "Article 243ZR deals with the application of the provisions of this part to multi-State cooperative societies. It ensures that the principles and regulations governing cooperative societies within states are also applicable to those operating across multiple states. This article promotes uniformity in the governance of cooperative societies throughout the country." },
+                { id: 288, title: "Article 243ZS", description: "Article 243ZS outlines the application of the provisions of this part to Union territories. It ensures that the laws and regulations governing cooperative societies are uniformly applicable to Union territories as well, thereby maintaining consistency in the administration and functioning of cooperative societies across different regions." },
+                { id: 289, title: "Article 243ZT", description: "Article 243ZT provides for the continuation of existing laws regarding cooperative societies until they are amended or repealed by a competent legislature or authority. It ensures that there is no legal vacuum and that the existing framework for the governance of cooperative societies remains in force until new laws are enacted." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+            console.log("Articles appended");
+        }
+
+        window.onload = fetchArticles277to289;
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>The Cooperative Societies</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>

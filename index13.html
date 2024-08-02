@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function fetchArticles301to307() {
+            const articles = [
+                { id: 301, title: "Article 301", description: "Article 301 of the Indian Constitution guarantees the freedom of trade, commerce, and intercourse throughout the territory of India. It ensures that trade and commerce can flow freely across state boundaries without any undue restrictions, promoting economic unity and the development of a common market." },
+                { id: 302, title: "Article 302", description: "Article 302 empowers Parliament to impose restrictions on trade, commerce, and intercourse between states as may be required in the public interest. This provision allows Parliament to regulate and manage trade and commerce to ensure that it serves the public good, even if it involves some limitations." },
+                { id: 303, title: "Article 303", description: "Article 303 of the Indian Constitution prohibits any discriminatory legislation by Parliament or the state legislatures that favors one state over another in matters of trade and commerce. It aims to prevent any biases and ensure fair and equal treatment of all states in commercial matters." },
+                { id: 304, title: "Article 304", description: "Article 304 allows state legislatures to impose reasonable restrictions on trade, commerce, and intercourse within their state in the interest of the public, subject to the approval of the President. This provision ensures that states have the authority to manage their internal trade affairs while maintaining a balance with national interests." },
+                { id: 305, title: "Article 305", description: "Article 305 saves existing laws and laws providing for state monopolies in certain trades from the prohibition of trade restrictions. It ensures that certain state-run monopolies and regulatory frameworks are preserved, even if they restrict trade, commerce, and intercourse to some extent." },
+                { id: 306, title: "Article 306", description: "Article 306 was omitted by the Constitution (Seventh Amendment) Act, 1956. Prior to its omission, it dealt with the trade and commerce within the tribal areas of Assam and ensured that the special needs of these regions were addressed in matters of trade and commerce." },
+                { id: 307, title: "Article 307", description: "Article 307 empowers Parliament to appoint an authority for carrying out the purposes of Articles 301 to 304 and to ensure the implementation of the provisions related to the freedom of trade, commerce, and intercourse. This authority is responsible for overseeing and managing the trade and commerce regulations to ensure compliance and effective governance." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles301to307;
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Trade, Commerce and Intercourse within the Territory of India</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>
