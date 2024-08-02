@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow-y: auto;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 300px;
+            margin-left: 20px;
+            background: none;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Articles</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        // Get the chapter from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const chapter = urlParams.get('chapter');
+
+        const articles = {
+            chapter1: [
+            { "id": 245, "title": "Article 245", "description": "Article 245 deals with the extent of laws made by the Parliament and State Legislatures, specifying that laws made by Parliament apply to the whole of India and those made by State Legislatures apply only to the State." },
+            { "id": 246, "title": "Article 246", "description": "Article 246 outlines the distribution of powers between the Union and State Legislatures, with three lists: Union List, State List, and Concurrent List." },
+            { "id": 247, "title": "Article 247", "description": "Article 247 authorizes Parliament to establish or provide for the establishment of additional courts for the better administration of laws related to the Union." },
+            { "id": 248, "title": "Article 248", "description": "Article 248 allows Parliament to make laws on matters not enumerated in the State List or the Concurrent List under the residuary power." },
+            { "id": 249, "title": "Article 249", "description": "Article 249 enables Parliament to legislate on a matter in the State List if the Rajya Sabha (Council of States) passes a resolution by a resolution motion." },
+            { "id": 250, "title": "Article 250", "description": "Article 250 allows Parliament to legislate on State List matters during a national emergency." },
+            { "id": 251, "title": "Article 251", "description": "Article 251 provides for the resolution of conflicts between Union and State laws on matters in the Concurrent List, giving precedence to Union laws." },
+            { "id": 252, "title": "Article 252", "description": "Article 252 permits States to agree to the enactment of laws by Parliament on matters in the State List." },
+            { "id": 253, "title": "Article 253", "description": "Article 253 authorizes Parliament to make laws for the implementation of international agreements and treaties." },
+            { "id": 254, "title": "Article 254", "description": "Article 254 deals with the inconsistency between State laws and Union laws on the same matter, with Union laws prevailing." },
+            { "id": 255, "title": "Article 255", "description": "Article 255 requires the State Legislature to make provisions for the remuneration of the Speaker and the Deputy Speaker of the Legislative Assembly, as well as other legislative officers." }
+        ],
+            chapter2: [
+            { "id": 256, "title": "Article 256", "description": "Article 256 mandates that States must comply with laws made by Parliament and ensure that they are implemented in accordance with the provisions of the Constitution." },
+            { "id": 257, "title": "Article 257", "description": "Article 257 deals with the power of the Union to give directions to States on matters concerning the maintenance of public order and the implementation of laws made by Parliament." },
+            { "id": 258, "title": "Article 258", "description": "Article 258 allows the Union to confer powers on States or their officers to carry out functions on behalf of the Union or to act as Union agents." },
+            { "id": 259, "title": "Article 259", "description": "Article 259 specifies that the Union's power to confer functions on States or their officers under Article 258 does not affect the power of the State Legislature to enact laws on such matters." },
+            { "id": 260, "title": "Article 260", "description": "Article 260 authorizes Parliament to confer powers on the Union or the State for the administration of certain matters or functions." },
+            { "id": 261, "title": "Article 261", "description": "Article 261 mandates that States and Union territories must recognize and give effect to the public acts, records, and judicial proceedings of other States." },
+            { "id": 262, "title": "Article 262", "description": "Article 262 provides for the resolution of disputes between States or between the Union and States through an inter-State Council or by reference to the Supreme Court." },
+            { "id": 263, "title": "Article 263", "description": "Article 263 establishes the Inter-State Council for the purpose of coordinating and resolving disputes between States and for facilitating cooperation between States and the Union." }
+        ],
+            };
+
+        function loadArticles(chapter) {
+            const articleContainer = document.getElementById('articleContainer');
+            const articlesList = articles[chapter] || [];
+            articleContainer.innerHTML = articlesList.map(article => `
+                <div class="section">
+                    <h2>${article.title}</h2>
+                    <p>${article.description}</p>
+                </div>
+            `).join('');
+        }
+
+        loadArticles(chapter);
+    </script>
+</body>
+</html>

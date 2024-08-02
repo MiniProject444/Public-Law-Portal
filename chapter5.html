@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow-y: auto;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 300px;
+            margin-left: 20px;
+            background: none;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Articles</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        // Get the chapter from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const chapter = urlParams.get('chapter');
+ const articles = {
+                chapter1: [
+                    { id: 52, title: "Article 52", description: "Article 52 provides for the office of the President of India, stating that there shall be a President of India." },
+                    { id: 53, title: "Article 53", description: "Article 53 vests the executive power of the Union in the President, which is to be exercised by the President either directly or through officers subordinate to them." },
+                    { id: 54, title: "Article 54", description: "Article 54 deals with the election of the President by an electoral college consisting of the elected members of both houses of Parliament and the elected members of the Legislative Assemblies of States and Union territories." },
+                    { id: 55, title: "Article 55", description: "Article 55 outlines the manner of election of the President and the value of votes of the members of the electoral college, ensuring uniformity in representation and fairness in the election process." },
+                    { id: 56, title: "Article 56", description: "Article 56 specifies the conditions under which the President can be removed from office, including the procedures for resignation and impeachment by Parliament." },
+                    { id: 57, title: "Article 57", description: "Article 57 provides for the eligibility of the President for reelection, stating that a President can be re-elected for any number of terms." },
+                    { id: 58, title: "Article 58", description: "Article 58 sets the qualifications required to be elected as President, including being a citizen of India, at least 35 years of age, and eligible for membership of the Lok Sabha." },
+                    { id: 59, title: "Article 59", description: "Article 59 specifies the conditions for the President’s office, including the prohibition of holding any other office of profit and the provision of the President’s powers and duties." },
+                    { id: 60, title: "Article 60", description: "Article 60 deals with the oath of office to be taken by the President before entering upon the duties of the office, swearing to preserve, protect, and defend the Constitution." },
+                    { id: 61, title: "Article 61", description: "Article 61 provides for the impeachment of the President for violation of the Constitution, outlining the procedure for impeachment by Parliament." },
+                    { id: 62, title: "Article 62", description: "Article 62 specifies the date of commencement of the President's term and the circumstances under which the office of the President becomes vacant." },
+                    { id: 63, title: "Article 63", description: "Article 63 provides for the office of the Vice-President of India, who shall be the ex-officio Chairman of the Rajya Sabha and shall act as President in case of vacancy in the office of the President." },
+                    { id: 64, title: "Article 64", description: "Article 64 defines the powers and functions of the Vice-President, including presiding over the Rajya Sabha and fulfilling the President’s duties in their absence." },
+                    { id: 65, title: "Article 65", description: "Article 65 outlines the resignation procedure for the Vice-President, which must be addressed to the President." },
+                    { id: 66, title: "Article 66", description: "Article 66 deals with the election of the Vice-President, specifying the manner of election and the qualifications required for the position." },
+                    { id: 67, title: "Article 67", description: "Article 67 specifies the conditions under which the Vice-President can be removed from office, including procedures for resignation and impeachment." },
+                    { id: 68, title: "Article 68", description: "Article 68 outlines the process for filling a vacancy in the office of the President or Vice-President, ensuring continuity in the administration." },
+                    { id: 69, title: "Article 69", description: "Article 69 provides for the administration of the oath of office to the President and Vice-President, ensuring that they solemnly swear to uphold the Constitution." },
+                    { id: 70, title: "Article 70", description: "Article 70 specifies the responsibilities of the President in relation to the Council of Ministers, including appointing and removing the Prime Minister and other ministers." },
+                    { id: 71, title: "Article 71", description: "Article 71 deals with the powers of the President to grant pardons, reprieves, and commutations of sentences under Article 72, including the conditions and limits of such powers." },
+                    { id: 72, title: "Article 72", description: "Article 72 provides the President with the power to grant pardons, reprieves, respites, or commutations of sentences, which is a critical aspect of the President's role in justice and mercy." },
+                    { id: 73, title: "Article 73", description: "Article 73 outlines the distribution of powers between the Union and the States, including the extent of executive powers exercisable by the Union government." },
+                    { id: 74, title: "Article 74", description: "Article 74 provides for the appointment of the Prime Minister and the Council of Ministers by the President, defining their responsibilities and terms of office." },
+                    { id: 75, title: "Article 75", description: "Article 75 specifies the conditions under which the Council of Ministers holds office, including their collective responsibility to the Lok Sabha and resignation in the event of a loss of confidence." },
+                    { id: 76, title: "Article 76", description: "Article 76 provides for the appointment of the Attorney General of India, outlining the duties and powers of this chief legal advisor to the Government of India." },
+                    { id: 77, title: "Article 77", description: "Article 77 deals with the conduct of business of the Government of India, including the allocation of responsibilities and the administration of affairs through ministries." },
+                    { id: 78, title: "Article 78", description: "Article 78 specifies the duties of the Prime Minister in relation to the President, including the communication of decisions and the implementation of policies." }
+                ],
+            
+            chapter2: [
+            { id: 79, title: "Article 79", description: "Article 79 establishes the Parliament of India, which consists of the President and two houses: the Lok Sabha and the Rajya Sabha." },
+            { id: 80, title: "Article 80", description: "Article 80 deals with the composition of the Rajya Sabha (Council of States), specifying the number of members and their manner of election." },
+            { id: 81, title: "Article 81", description: "Article 81 provides the manner of election of members of the Lok Sabha (House of the People), including the allocation of seats to different states." },
+            { id: 82, title: "Article 82", description: "Article 82 mandates the re-adjustment of constituencies after each census to ensure fair representation in the Lok Sabha." },
+            { id: 83, title: "Article 83", description: "Article 83 specifies the term of office for the Lok Sabha, which is five years from the date of its first meeting unless dissolved earlier." },
+            { id: 84, title: "Article 84", description: "Article 84 outlines the qualifications for membership in the Lok Sabha, including age, citizenship, and disqualification conditions." },
+            { id: 85, title: "Article 85", description: "Article 85 deals with the prorogation and dissolution of the Lok Sabha by the President, and the power to summon Parliament sessions." },
+            { id: 86, title: "Article 86", description: "Article 86 provides the procedure for the President to summon and prorogue Parliament sessions." },
+            { id: 87, title: "Article 87", description: "Article 87 outlines the President's address to Parliament and the power to communicate legislative proposals." },
+            { id: 88, title: "Article 88", description: "Article 88 deals with the rights of ministers to speak in Parliament, including their right to be heard and participate in discussions." },
+            { id: 89, title: "Article 89", description: "Article 89 provides for the election of the Speaker and Deputy Speaker of the Lok Sabha and their powers and functions." },
+            { id: 90, title: "Article 90", description: "Article 90 deals with the election of the Chairman and Deputy Chairman of the Rajya Sabha and their responsibilities." },
+            { id: 91, title: "Article 91", description: "Article 91 provides for the procedures regarding the resignation of the Speaker, Deputy Speaker, Chairman, or Deputy Chairman of Parliament." },
+            { id: 92, title: "Article 92", description: "Article 92 deals with the powers of the Speaker of the Lok Sabha to maintain order and discipline during sessions." },
+            { id: 93, title: "Article 93", description: "Article 93 provides the process for the election of the Speaker and Deputy Speaker of the Lok Sabha and their duties." },
+            { id: 94, title: "Article 94", description: "Article 94 deals with the powers and responsibilities of the Chairman of the Rajya Sabha in maintaining order during sessions." },
+            { id: 95, title: "Article 95", description: "Article 95 outlines the procedures for the resignation of the Speaker or Deputy Speaker of the Lok Sabha and the Chairman or Deputy Chairman of the Rajya Sabha." },
+            { id: 96, title: "Article 96", description: "Article 96 deals with the compensation and allowances of the Speaker, Deputy Speaker, Chairman, and Deputy Chairman of Parliament." },
+            { id: 97, title: "Article 97", description: "Article 97 provides for the salaries and allowances of the members of Parliament and the procedures for their payment." },
+            { id: 98, title: "Article 98", description: "Article 98 deals with the privileges and immunities of members of Parliament, including protection from arrest and legal proceedings in certain cases." },
+            { id: 99, title: "Article 99", description: "Article 99 outlines the responsibilities of members of Parliament to take an oath of allegiance to the Constitution before assuming office." },
+            { id: 100, title: "Article 100", description: "Article 100 deals with the procedure for voting in Parliament and the power of the presiding officers to cast a deciding vote in case of a tie." },
+            { id: 101, title: "Article 101", description: "Article 101 provides the procedure for the resignation of members of Parliament and the filling of vacant seats." },
+            { id: 102, title: "Article 102", description: "Article 102 specifies the disqualifications for membership in Parliament, including conditions related to holding office of profit, insolvency, and criminal convictions." },
+            { id: 103, title: "Article 103", description: "Article 103 outlines the powers of the President to summon and prorogue Parliament, as well as the power to dissolve the Lok Sabha." },
+            { id: 104, title: "Article 104", description: "Article 104 deals with the powers of Parliament to make rules for its own procedures and conduct of business." },
+            { id: 105, title: "Article 105", description: "Article 105 specifies the privileges and immunities of members of Parliament, including protection against arrest and legal proceedings during their term." },
+            { id: 106, title: "Article 106", description: "Article 106 provides for the salaries and allowances of ministers and members of Parliament, including the procedures for their payment." },
+            { id: 107, title: "Article 107", description: "Article 107 deals with the procedure for introducing and passing bills in Parliament, including the types of bills and the stages of their passage." },
+            { id: 108, title: "Article 108", description: "Article 108 provides for the joint sitting of both houses of Parliament to resolve disagreements on bills." },
+            { id: 109, title: "Article 109", description: "Article 109 outlines the procedures for the President's power to withhold assent to bills and the conditions under which a bill becomes law." },
+            { id: 110, title: "Article 110", description: "Article 110 specifies the types of bills that can be introduced in Parliament, including money bills and their procedures." },
+            { id: 111, title: "Article 111", description: "Article 111 deals with the power of the President to return bills with a request for reconsideration." },
+            { id: 112, title: "Article 112", description: "Article 112 provides for the presentation of the Union Budget to Parliament and the procedures for its approval." },
+            { id: 113, title: "Article 113", description: "Article 113 outlines the procedure for the consideration and passage of the budget by Parliament." },
+            { id: 114, title: "Article 114", description: "Article 114 deals with the appropriation of funds from the Consolidated Fund of India for expenditure purposes." },
+            { id: 115, title: "Article 115", description: "Article 115 specifies the provisions for the distribution of revenue between the Union and the States." },
+            { id: 116, title: "Article 116", description: "Article 116 provides for the imposition and collection of taxes by Parliament and the allocation of tax revenue." },
+            { id: 117, title: "Article 117", description: "Article 117 outlines the powers of Parliament to levy and collect taxes and duties for the Union and allocate them for various purposes." },
+            { id: 118, title: "Article 118", description: "Article 118 deals with the powers of Parliament to make laws on matters of national importance and to regulate its own procedures." },
+            { id: 119, title: "Article 119", description: "Article 119 provides for the powers of Parliament to alter the boundaries of States and Union territories." },
+            { id: 120, title: "Article 120", description: "Article 120 specifies the powers of Parliament to establish and regulate the Supreme Court and other judicial institutions." },
+            { id: 121, title: "Article 121", description: "Article 121 deals with the powers of Parliament to confer powers on the judiciary and regulate its functions." },
+            { id: 122, title: "Article 122", description: "Article 122 deals with the powers of Parliament to regulate its own procedure and maintain order during its sessions." }
+        ],
+            chapter3: [
+                { id: 123, title: "Article 123", description: "Article 123 gives the President the power to issue ordinances." }
+            ],
+            chapter4:[
+            { "id": 124, "title": "Article 124", "description": "Article 124 establishes the Supreme Court of India, which is the highest court of appeal and final authority on legal matters. It provides for the appointment of the Chief Justice and other judges of the Supreme Court, their tenure, and the conditions of their service. The article also outlines the Supreme Court’s jurisdiction, including its role in interpreting the Constitution and resolving disputes between states and the Union." },
+            { "id": 125, "title": "Article 125", "description": "Article 125 deals with the salaries and allowances of the Chief Justice and the judges of the Supreme Court. It specifies that their remuneration is to be determined by Parliament and cannot be reduced during their term of office, except during a financial emergency. This provision ensures their independence and impartiality." },
+            { "id": 126, "title": "Article 126", "description": "Article 126 provides for the appointment of an acting Chief Justice of the Supreme Court in cases where the Chief Justice is unable to perform their duties. The President has the power to appoint an acting Chief Justice from among the judges of the Supreme Court to perform the functions of the Chief Justice." },
+            { "id": 127, "title": "Article 127", "description": "Article 127 allows the appointment of additional judges to the Supreme Court for a temporary period. This provision helps manage the workload of the Court and ensures that there are sufficient judges to handle the caseload effectively." },
+            { "id": 128, "title": "Article 128", "description": "Article 128 authorizes the Supreme Court to invite retired judges to sit and act as judges of the Court, if the Chief Justice deems it necessary. This is done to ensure that the Court has enough judicial resources to address its workload." },
+            { "id": 129, "title": "Article 129", "description": "Article 129 declares the Supreme Court to be a court of record. This means that its judgments, proceedings, and records are maintained permanently and can be referred to as legal precedents in future cases. The Supreme Court also has the authority to punish for contempt of court." },
+            { "id": 130, "title": "Article 130", "description": "Article 130 designates Delhi as the seat of the Supreme Court. It also provides for the possibility of establishing additional benches of the Supreme Court at other locations as deemed necessary by the President." },
+            { "id": 131, "title": "Article 131", "description": "Article 131 outlines the original jurisdiction of the Supreme Court in disputes between states or between the Union and states. The Court has the authority to adjudicate these disputes, ensuring a resolution in cases of conflict between different entities of the Union." },
+            { "id": 132, "title": "Article 132", "description": "Article 132 provides for the appellate jurisdiction of the Supreme Court in civil and criminal cases where substantial questions of law or constitutional issues are involved. This ensures that significant legal questions can be reviewed and resolved by the highest court." },
+            { "id": 133, "title": "Article 133", "description": "Article 133 deals with the appellate jurisdiction of the Supreme Court in civil cases where the value of the dispute exceeds a specified amount. This provision allows parties to appeal to the Supreme Court if they believe there has been a substantial error in the lower court’s decision." },
+            { "id": 134, "title": "Article 134", "description": "Article 134 outlines the appellate jurisdiction of the Supreme Court in criminal cases. It provides conditions under which the Supreme Court can hear appeals from lower courts on matters of law and significant legal principles." },
+            { "id": 135, "title": "Article 135", "description": "Article 135 provides for the jurisdiction of the Supreme Court over matters arising under any existing laws relating to the Supreme Court. This allows the Court to interpret and apply laws that were in force before the adoption of the Constitution." },
+            { "id": 136, "title": "Article 136", "description": "Article 136 grants the Supreme Court the power to grant special leave to appeal against any judgment or order of any court or tribunal in the country. This provision allows the Court to review cases where there has been a miscarriage of justice or significant legal errors." },
+            { "id": 137, "title": "Article 137", "description": "Article 137 provides for the review of judgments by the Supreme Court. The Court has the authority to review its own decisions and correct any errors or omissions in its judgments, ensuring justice and accuracy." },
+            { "id": 138, "title": "Article 138", "description": "Article 138 allows the Supreme Court to have advisory jurisdiction on legal matters referred to it by the President of India. This provision enables the Court to provide opinions on significant legal questions or constitutional issues at the request of the President." },
+            { "id": 139, "title": "Article 139", "description": "Article 139 grants the Supreme Court the power to transfer cases from one High Court to another or from a subordinate court to a High Court. This ensures that cases are heard in a court that is best suited to handle them, promoting fairness and efficiency in the judicial process." },
+            { "id": 140, "title": "Article 140", "description": "Article 140 allows the Supreme Court to issue directions or orders for the enforcement of fundamental rights or for the promotion of justice. This provision ensures that the Court can take necessary actions to uphold the Constitution and protect individual rights." },
+            { "id": 141, "title": "Article 141", "description": "Article 141 establishes that the law declared by the Supreme Court is binding on all courts within the territory of India. This principle ensures uniformity in the interpretation and application of the law throughout the country." },
+            { "id": 142, "title": "Article 142", "description": "Article 142 provides the Supreme Court with the power to pass any decree or make any order necessary for doing complete justice in any case. This provision allows the Court to ensure that justice is fully achieved, even if it requires creative or unconventional remedies." },
+            { "id": 143, "title": "Article 143", "description": "Article 143 grants the President the power to refer legal questions or matters of public importance to the Supreme Court for advisory opinions. This provision helps the President seek the Court’s guidance on significant legal or constitutional issues." },
+            { "id": 144, "title": "Article 144", "description": "Article 144 mandates that all authorities and courts in India must act in accordance with the Supreme Court’s judgments, orders, and directions. This ensures that the Supreme Court’s decisions are effectively implemented and adhered to throughout the country." },
+            { "id": 145, "title": "Article 145", "description": "Article 145 provides the Supreme Court with the authority to make rules regarding its own procedure and practice. This includes the power to regulate the conduct of cases, the filing of documents, and other procedural aspects of its functioning." },
+            { "id": 146, "title": "Article 146", "description": "Article 146 deals with the appointment of the officers and staff of the Supreme Court. It specifies that the Supreme Court's establishment, including its officers, clerks, and other employees, is to be determined by rules made by the Court." },
+            { "id": 147, "title": "Article 147", "description": "Article 147 defines the jurisdiction of the Supreme Court to interpret and apply laws made by Parliament and state legislatures. It ensures that the Supreme Court can review and provide authoritative interpretations of legal provisions, maintaining consistency and clarity in the law." }
+        ],
+            chapter5:[
+            { "id": 148, "title": "Article 148", "description": "Article 148 establishes the office of the Comptroller and Auditor General (CAG) of India. The CAG is responsible for auditing the accounts of the Union and State governments and ensuring accountability in financial matters. The article outlines the CAG's appointment, tenure, and the conditions of service, and ensures the independence of this office from executive influence." },
+            { "id": 149, "title": "Article 149", "description": "Article 149 provides for the conditions of service of the Comptroller and Auditor General. It stipulates that the CAG will be appointed by the President of India and will hold office for a term as determined by the President, subject to removal only on the grounds and manner prescribed for a High Court judge." },
+            { "id": 150, "title": "Article 150", "description": "Article 150 mandates the CAG to prepare an annual report on the accounts of the Union and State governments. This report is to be presented to the President, who then lays it before Parliament. The article ensures transparency and accountability in the management of public funds." },
+            { "id": 151, "title": "Article 151", "description": "Article 151 specifies the procedure for the presentation of the CAG’s reports to Parliament. It provides that the reports of the Comptroller and Auditor General on the accounts of the Union and State governments must be submitted to Parliament and the State Legislatures, ensuring that financial matters are subject to legislative scrutiny." }
+        ]
+        };
+
+        function displayArticles(chapter) {
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            if (articles[chapter]) {
+                articles[chapter].forEach(article => {
+                    const div = document.createElement('div');
+                    div.className = 'section';
+                    div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                    articleContainer.appendChild(div);
+                });
+            } else {
+                articleContainer.innerHTML = '<p>No articles available for this chapter.</p>';
+            }
+        }
+
+        // Display articles based on the chapter selected
+        displayArticles(chapter);
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow-y: auto;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 300px;
+            margin-left: 20px;
+            background: none;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Articles</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        // Get the chapter from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const chapter = urlParams.get('chapter');
+
+        const articles = {
+            chapter1: [{
+                "id": 152,
+                "title": "Article 152",
+                "description": "Article 152 of the Indian Constitution defines the term 'State' as used in Part VI of the Constitution. It clarifies that for the purposes of Part VI, which deals with the States, the term 'State' does not include the State of Jammu and Kashmir. This article provides a specific exclusion, indicating that the provisions under Part VI do not automatically apply to Jammu and Kashmir, which has a special status under the Constitution."
+            }
+            
+            ],
+            chapter2: [
+            { "id": 153, "title": "Article 153", "description": "Article 153 provides for the establishment of a Governor for each State in India." },
+            { "id": 154, "title": "Article 154", "description": "Article 154 states that the executive powers of the State shall be vested in the Governor." },
+            { "id": 155, "title": "Article 155", "description": "Article 155 provides for the appointment of the Governor by the President of India." },
+            { "id": 156, "title": "Article 156", "description": "Article 156 deals with the tenure of the Governor, stating that the Governor shall hold office at the pleasure of the President." },
+            { "id": 157, "title": "Article 157", "description": "Article 157 outlines the conditions of eligibility for the appointment of a Governor, including age and residency requirements." },
+            { "id": 158, "title": "Article 158", "description": "Article 158 discusses the powers and duties of the Governor, including the administration of the State's executive functions." },
+            { "id": 159, "title": "Article 159", "description": "Article 159 provides for the oath or affirmation to be taken by the Governor before entering office." },
+            { "id": 160, "title": "Article 160", "description": "Article 160 authorizes the President to appoint an acting Governor in cases where the Governor is unable to perform their duties." },
+            { "id": 161, "title": "Article 161", "description": "Article 161 grants the Governor the power to pardon, commute, or remit sentences for offenses against State laws." },
+            { "id": 162, "title": "Article 162", "description": "Article 162 provides for the division of powers between the State and Union governments, including the distribution of legislative powers." },
+            { "id": 163, "title": "Article 163", "description": "Article 163 discusses the role of the Council of Ministers in assisting and advising the Governor in the exercise of their powers." },
+            { "id": 164, "title": "Article 164", "description": "Article 164 provides for the appointment of the Chief Minister and other Ministers by the Governor, as well as the formation of the State Council of Ministers." },
+            { "id": 165, "title": "Article 165", "description": "Article 165 requires the Governor to be informed of all executive actions taken by the State government." },
+            { "id": 166, "title": "Article 166", "description": "Article 166 deals with the conduct of government business, requiring that all executive actions of the State government be taken in the name of the Governor." },
+            { "id": 167, "title": "Article 167", "description": "Article 167 provides for the duties of the Chief Minister to inform the Governor about the administration of the State's affairs and the proposals for legislation." }
+        ],
+            chapter3: [
+            { "id": 168, "title": "Article 168", "description": "Article 168 provides for the establishment of the Legislature in each State, which may be unicameral or bicameral." },
+            { "id": 169, "title": "Article 169", "description": "Article 169 outlines the procedure for the creation or abolition of a Legislative Council in a State where there is a Legislative Assembly." },
+            { "id": 170, "title": "Article 170", "description": "Article 170 specifies the composition of the Legislative Assembly of a State, including the number of members and their election." },
+            { "id": 171, "title": "Article 171", "description": "Article 171 provides for the composition of the Legislative Council of a State, where such a Council exists, and its members' election and appointment." },
+            { "id": 172, "title": "Article 172", "description": "Article 172 stipulates the duration of the State Legislature and the conditions under which it may be dissolved or prorogued." },
+            { "id": 173, "title": "Article 173", "description": "Article 173 defines the qualifications for membership in the State Legislature and the conditions for disqualification." },
+            { "id": 174, "title": "Article 174", "description": "Article 174 provides for the summoning and proroguing of the State Legislature by the Governor." },
+            { "id": 175, "description": "Article 175 requires the Governor to address the State Legislature at the commencement of each session, outlining the government's policies and programs." },
+            { "id": 176, "title": "Article 176", "description": "Article 176 mandates the Governor to provide a statement of the financial position of the State to the Legislature." },
+            { "id": 177, "title": "Article 177", "description": "Article 177 details the process for the presentation of reports and papers by the State Legislature." },
+            { "id": 178, "title": "Article 178", "description": "Article 178 covers the election of the Speaker and Deputy Speaker of the Legislative Assembly of a State." },
+            { "id": 179, "title": "Article 179", "description": "Article 179 addresses the conditions under which the Speaker and Deputy Speaker of the Legislative Assembly may be removed from office." },
+            { "id": 180, "title": "Article 180", "description": "Article 180 provides for the election of the Chairman and Deputy Chairman of the Legislative Council of a State, where such a Council exists." },
+            { "id": 181, "title": "Article 181", "description": "Article 181 specifies the conditions under which the Chairman and Deputy Chairman of the Legislative Council may be removed from office." },
+            { "id": 182, "title": "Article 182", "description": "Article 182 details the powers and functions of the Speaker and Deputy Speaker of the Legislative Assembly, and the Chairman and Deputy Chairman of the Legislative Council." },
+            { "id": 183, "title": "Article 183", "description": "Article 183 provides for the procedures for the conduct of business in the State Legislature, including rules and regulations for debates and voting." },
+            { "id": 184, "title": "Article 184", "description": "Article 184 deals with the power of the State Legislature to summon witnesses and enforce their attendance for the purpose of inquiry or investigation." },
+            { "id": 185, "title": "Article 185", "description": "Article 185 provides for the rights and privileges of the members of the State Legislature and the protection of their freedom of speech within the House." },
+            { "id": 186, "title": "Article 186", "description": "Article 186 specifies the rules for the conduct of business in the State Legislature, including the powers of the Speaker or Chairman to maintain order." },
+            { "id": 187, "title": "Article 187", "description": "Article 187 deals with the powers of the State Legislature to make laws on various subjects and the process for passing bills." },
+            { "id": 188, "title": "Article 188", "description": "Article 188 outlines the procedures for the consideration and passing of bills in the State Legislature, including the stages of a bill's passage." },
+            { "id": 189, "title": "Article 189", "description": "Article 189 provides for the procedures to be followed if a bill is rejected by the State Legislature and the powers of the Governor in such cases." },
+            { "id": 190, "title": "Article 190", "description": "Article 190 details the procedures for the dissolution of the Legislative Assembly and the reconstitution of the Legislature." },
+            { "id": 191, "title": "Article 191", "description": "Article 191 specifies the powers and functions of the State Legislature with respect to the State’s finances and budget." },
+            { "id": 192, "title": "Article 192", "description": "Article 192 provides for the procedure for the presentation and discussion of the State's budget in the Legislature." },
+            { "id": 193, "title": "Article 193", "description": "Article 193 outlines the procedures for the approval of expenditure and taxation in the State Legislature." },
+            { "id": 194, "title": "Article 194", "description": "Article 194 provides for the distribution of powers and responsibilities between the State Legislature and the Union government." },
+            { "id": 195, "title": "Article 195", "description": "Article 195 deals with the appointment of officers to the State Legislature and their duties and responsibilities." },
+            { "id": 196, "title": "Article 196", "description": "Article 196 provides for the procedures to be followed for the enforcement of the laws enacted by the State Legislature." },
+            { "id": 197, "title": "Article 197", "description": "Article 197 outlines the procedures for the amendment of laws passed by the State Legislature." },
+            { "id": 198, "title": "Article 198", "description": "Article 198 provides for the power of the State Legislature to make laws on matters specified in the State List and the Concurrent List." },
+            { "id": 199, "title": "Article 199", "description": "Article 199 deals with the power of the State Legislature to create and maintain its own records and archives." },
+            { "id": 200, "title": "Article 200", "description": "Article 200 provides for the appointment of officers to the State Legislature and their duties and responsibilities." },
+            { "id": 201, "title": "Article 201", "description": "Article 201 deals with the power of the State Legislature to create and maintain its own records and archives." },
+            { "id": 202, "title": "Article 202", "description": "Article 202 specifies the procedure for the presentation of the State budget and the approval of expenditure and taxation." },
+            { "id": 203, "title": "Article 203", "description": "Article 203 provides for the procedures for the passing of appropriation bills and the allocation of funds." },
+            { "id": 204, "title": "Article 204", "description": "Article 204 outlines the procedures for the consideration of supplementary and additional demands for grants." },
+            { "id": 205, "title": "Article 205", "description": "Article 205 provides for the procedures to be followed for the approval of supplementary, additional, or excess demands for grants." },
+            { "id": 206, "title": "Article 206", "description": "Article 206 specifies the powers of the State Legislature to create laws on financial matters and the allocation of resources." },
+            { "id": 207, "title": "Article 207", "description": "Article 207 deals with the procedures for the consideration and passage of financial bills in the State Legislature." },
+            { "id": 208, "title": "Article 208", "description": "Article 208 provides for the powers of the State Legislature to make laws on various subjects and the process for passing bills." },
+            { "id": 209, "title": "Article 209", "description": "Article 209 outlines the procedures for the consideration and passing of bills related to the State’s finances." },
+            { "id": 210, "title": "Article 210", "description": "Article 210 specifies the procedures for the presentation and discussion of the State budget in the Legislature." },
+            { "id": 211, "title": "Article 211", "description": "Article 211 provides for the powers of the State Legislature to make laws on subjects listed in the State List and Concurrent List." },
+            { "id": 212, "title": "Article 212", "description": "Article 212 deals with the powers and procedures for the State Legislature to enforce its laws and the role of the Governor in this process." }
+        ],
+            chapter4:[
+            {
+                "id": 213,
+                "title": "Article 213",
+                "description": "Article 213 empowers the Governor to make ordinances when the State Legislature is not in session. These ordinances have the same force and effect as laws passed by the Legislature but must be approved by the Legislature within six months of reassembling to remain in effect."
+            }
+        ],
+        chapter5:[
+        { "id": 214, "title": "Article 214", "description": "Article 214 establishes the High Courts for each state. Every state must have a High Court, and each High Court's jurisdiction covers the territory of that state." },
+        { "id": 215, "title": "Article 215", "description": "Article 215 states that every High Court shall be a court of record, and shall have all the powers of such a court, including the power to punish for contempt of itself." },
+        { "id": 216, "title": "Article 216", "description": "Article 216 provides for the composition of the High Court, including the number of judges and the manner of their appointment." },
+        { "id": 217, "title": "Article 217", "description": "Article 217 outlines the appointment of High Court judges, their conditions of service, and their retirement. It also details the process for their removal." },
+        { "id": 218, "title": "Article 218", "description": "Article 218 covers the application of certain provisions of Article 124 (regarding the appointment of Supreme Court judges) to the High Courts, with necessary modifications." },
+        { "id": 219, "title": "Article 219", "description": "Article 219 mandates that every High Court judge must make and subscribe to an oath or affirmation before assuming office." },
+        { "id": 220, "title": "Article 220", "description": "Article 220 prohibits a High Court judge from practicing law after their appointment, except for cases where they were previously engaged in judicial functions." },
+        { "id": 221, "title": "Article 221", "description": "Article 221 addresses the salaries and allowances of High Court judges and states that these are charged on the Consolidated Fund of the State." },
+        { "id": 222, "title": "Article 222", "description": "Article 222 provides for the transfer of High Court judges from one High Court to another, as directed by the President of India." },
+        { "id": 223, "title": "Article 223", "description": "Article 223 details the appointment of an acting Chief Justice in the absence of the Chief Justice of a High Court." },
+        { "id": 224, "title": "Article 224", "description": "Article 224 allows for the appointment of additional judges to the High Court, to handle increased caseloads." },
+        { "id": 225, "title": "Article 225", "description": "Article 225 provides for the jurisdiction and powers of High Courts, including the ability to issue writs, orders, and directions." },
+        { "id": 226, "title": "Article 226", "description": "Article 226 empowers High Courts to issue writs and orders to enforce fundamental rights and for other purposes." },
+        { "id": 227, "title": "Article 227", "description": "Article 227 grants High Courts the power of superintendence over all courts and tribunals within their jurisdiction." },
+        { "id": 228, "title": "Article 228", "description": "Article 228 provides for the transfer of cases to the High Court from lower courts if deemed necessary for the administration of justice." },
+        { "id": 229, "title": "Article 229", "description": "Article 229 addresses the officers and servants of High Courts, including their conditions of service." },
+        { "id": 230, "title": "Article 230", "description": "Article 230 deals with the powers of the State Legislature to create and regulate subordinate courts." },
+        { "id": 231, "title": "Article 231", "description": "Article 231 provides for the establishment of a High Court for a group of States or Union territories if the President deems it necessary." },
+        { "id": 232, "title": "Article 232", "description": "Article 232 empowers the State Legislature to make laws regarding the constitution and powers of subordinate courts." }
+    ],
+    chapter6:[
+    { "id": 233, "title": "Article 233", "description": "Article 233 deals with the appointment of district judges, including their conditions of service and the process of their appointment." },
+    { "id": 234, "title": "Article 234", "description": "Article 234 mandates the State Legislature to make provisions for the recruitment and conditions of service for judicial officers other than district judges." },
+    { "id": 235, "title": "Article 235", "description": "Article 235 provides for the control of subordinate courts by the High Court, including the power to transfer and promote officers." },
+    { "id": 236, "title": "Article 236", "description": "Article 236 defines the terms 'district judge' and 'subordinate court' for the purposes of Articles 233 to 235." },
+    { "id": 237, "title": "Article 237", "description": "Article 237 empowers the State Legislature to make provisions for the constitution and powers of other subordinate courts." }
+],
+            
+        };
+
+        function loadArticles(chapter) {
+            const articleContainer = document.getElementById('articleContainer');
+            const articlesList = articles[chapter] || [];
+            articleContainer.innerHTML = articlesList.map(article => `
+                <div class="section">
+                    <h2>${article.title}</h2>
+                    <p>${article.description}</p>
+                </div>
+            `).join('');
+        }
+
+        loadArticles(chapter);
+    </script>
+</body>
+</html>

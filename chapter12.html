@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow-y: auto;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 300px;
+            margin-left: 20px;
+            background: none;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Articles</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        // Get the chapter from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const chapter = urlParams.get('chapter');
+
+        const articles = {
+            chapter1:[
+            { "id": 264, "title": "Article 264", "description": "Article 264 provides for the application of the provisions of the Constitution relating to the distribution of revenue between the Union and the States." },
+            { "id": 265, "title": "Article 265", "description": "Article 265 mandates that no tax shall be levied or collected except by authority of law." },
+            { "id": 266, "title": "Article 266", "description": "Article 266 deals with the allocation of revenues between the Union and States, including the constitution of the Consolidated Fund and the Public Account of the States." },
+            { "id": 267, "title": "Article 267", "description": "Article 267 provides for the establishment of a Contingency Fund for each State to meet unforeseen expenditure." },
+            { "id": 268, "title": "Article 268", "description": "Article 268 specifies the distribution of duties and taxes on goods and services between the Union and the States." },
+            { "id": 269, "title": "Article 269", "description": "Article 269 deals with the taxes on the sale or purchase of goods and the distribution of proceeds between the Union and the States." },
+            { "id": 270, "title": "Article 270", "description": "Article 270 provides for the distribution of the net proceeds of certain taxes between the Union and the States according to the recommendations of the Finance Commission." },
+            { "id": 271, "title": "Article 271", "description": "Article 271 empowers Parliament to levy additional taxes to meet any deficit in the Consolidated Fund of India." },
+            { "id": 272, "title": "Article 272", "description": "Article 272 deals with the distribution of the proceeds of certain taxes between the Union and the States, with provisions for sharing the revenue from taxes on income." },
+            { "id": 273, "title": "Article 273", "description": "Article 273 provides for the grants-in-aid to States from the Consolidated Fund of India, as recommended by the Finance Commission." },
+            { "id": 274, "title": "Article 274", "description": "Article 274 relates to the power of Parliament to legislate on the distribution of resources between the Union and the States." },
+            { "id": 275, "title": "Article 275", "description": "Article 275 deals with the grants-in-aid of the revenue of the States and the allocation of such grants." },
+            { "id": 276, "title": "Article 276", "description": "Article 276 provides for the tax on professions, trades, callings, and employments, and their allocation between the Union and the States." },
+            { "id": 277, "title": "Article 277", "description": "Article 277 deals with the allocation of certain taxes to be levied by the Union on the income of individuals or entities." },
+            { "id": 278, "title": "Article 278", "description": "Article 278 provides for the application of provisions regarding the distribution of financial resources between the Union and the States." },
+            { "id": 279, "title": "Article 279", "description": "Article 279 specifies the computation of net proceeds of taxes and their distribution between the Union and the States." },
+            { "id": 280, "title": "Article 280", "description": "Article 280 provides for the establishment of a Finance Commission to review the financial relations between the Union and the States." },
+            { "id": 281, "title": "Article 281", "description": "Article 281 mandates the presentation of the report of the Finance Commission to the President and its laying before Parliament." },
+            { "id": 282, "title": "Article 282", "description": "Article 282 allows for the provision of grants from the Union to the States for specific purposes." },
+            { "id": 283, "title": "Article 283", "description": "Article 283 deals with the administration of funds in the Consolidated Fund of the State and the Public Account of the State." },
+            { "id": 284, "title": "Article 284", "description": "Article 284 specifies the arrangements for the management of the Public Account of the State." },
+            { "id": 285, "title": "Article 285", "description": "Article 285 provides for the allocation of the net proceeds of certain taxes between the Union and the States." },
+            { "id": 286, "title": "Article 286", "description": "Article 286 deals with the distribution of tax proceeds on the sale or purchase of goods between the Union and the States." },
+            { "id": 287, "title": "Article 287", "description": "Article 287 provides for the allocation of the tax on the sale or purchase of goods in transit between the Union and the States." },
+            { "id": 288, "title": "Article 288", "description": "Article 288 deals with the distribution of proceeds from the taxes on goods and services between the Union and the States." },
+            { "id": 289, "title": "Article 289", "description": "Article 289 specifies the distribution of proceeds from certain taxes between the Union and the States." },
+            { "id": 290, "title": "Article 290", "description": "Article 290 provides for the distribution of the proceeds of certain taxes on income between the Union and the States." },
+            { "id": 291, "title": "Article 291", "description": "Article 291 deals with the allocation of certain resources and financial provisions between the Union and the States." }
+        ],
+            chapter2: [
+            { "id": 292, "title": "Article 292", "description": "Article 292 provides for the borrowing powers of the Union and the States, including the circumstances under which they can borrow and the purpose of borrowing." },
+            { "id": 293, "title": "Article 293", "description": "Article 293 deals with the provisions related to the borrowing of money by the State and the conditions under which it must be repaid." }
+        ],
+        chapter3: [
+        { "id": 294, "title": "Article 294", "description": "Article 294 deals with the distribution of property between the Union and the States at the time of the formation of new States or reorganization of existing States." },
+        { "id": 295, "title": "Article 295", "description": "Article 295 addresses the property and assets of the Union and the States, including their management and administration." },
+        { "id": 296, "title": "Article 296", "description": "Article 296 deals with the distribution of revenue between the Union and the States, including the principles of allocation." },
+        { "id": 297, "title": "Article 297", "description": "Article 297 concerns the property of the Union that is vested in the President and the property of the States vested in the Governors." },
+        { "id": 298, "title": "Article 298", "description": "Article 298 provides for the power of the Union and the States to acquire and dispose of property for the purpose of carrying out their functions." },
+        { "id": 299, "title": "Article 299", "description": "Article 299 deals with the contracts made by the Union and the States, including the formalities and conditions for their execution." },
+        { "id": 300, "title": "Article 300", "description": "Article 300 provides for the suits and legal proceedings against the Union and the States, including the conditions under which they can be sued." },
+        { "id": 3001, "title": "Article 300A", "description": "Article 300A provides for the protection of property rights, stating that no person shall be deprived of their property except by authority of law." }
+    ],
+        
+            };
+
+        function loadArticles(chapter) {
+            const articleContainer = document.getElementById('articleContainer');
+            const articlesList = articles[chapter] || [];
+            articleContainer.innerHTML = articlesList.map(article => `
+                <div class="section">
+                    <h2>${article.title}</h2>
+                    <p>${article.description}</p>
+                </div>
+            `).join('');
+        }
+
+        loadArticles(chapter);
+    </script>
+</body>
+</html>

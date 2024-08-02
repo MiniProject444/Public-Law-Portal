@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow-y: auto;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 300px;
+            margin-left: 20px;
+            background: none;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Articles</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        // Get the chapter from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const chapter = urlParams.get('chapter');
+
+        const articles = {
+            chapter1:[
+            { "id": 343, "title": "Article 343", "description": "Article 343 designates Hindi as the official language of the Republic of India and specifies that the script for Hindi shall be Devanagari. It also provides for the use of English for official purposes of the Union." },
+            { "id": 344, "title": "Article 344", "description": "Article 344 provides for the establishment of a Commission for the promotion of the official language of the Union. It also specifies the powers and duties of the Commission, including making recommendations on the progressive use of Hindi for official purposes." }
+        ]
+        ,
+            chapter2: [
+            { "id": 345, "title": "Article 345", "description": "Article 345 allows the State Legislature to adopt any one or more languages spoken by the people of the State as the official language(s) of that State, in addition to Hindi." },
+            { "id": 346, "title": "Article 346", "description": "Article 346 provides that the official language of the Union for communication with the States shall be Hindi, or in some cases, English as specified by the President of India." },
+            { "id": 347, "title": "Article 347", "description": "Article 347 provides for the recognition of a language spoken by a substantial proportion of the population in a State as an additional official language in that State, if the President determines it to be necessary for the effective administration of the State." }
+        ],
+        chapter3: [
+        { "id": 348, "title": "Article 348", "description": "Article 348 stipulates that the language used for official purposes of the Union, including the language of the Supreme Court, High Courts, and other courts, shall be Hindi or English as prescribed by the President." },
+        { "id": 349, "title": "Article 349", "description": "Article 349 provides for the appointment of a Special Officer for Linguistic Minorities to investigate matters relating to the safeguards provided for linguistic minorities in the State and report to the President." }
+    ],
+    chapter4: [
+    { "id": 350, "title": "Article 350", "description": "Article 350 ensures that every person shall be entitled to submit representations for the redress of any grievance to the President or the Governor in the language of their choice." },
+    { "id": 351, "title": "Article 351", "description": "Article 351 directs the promotion of the Hindi language as a means of communication for all the people of India, and to ensure that it is enriched by incorporating elements from other languages." }
+],
+
+        
+            };
+
+        function loadArticles(chapter) {
+            const articleContainer = document.getElementById('articleContainer');
+            const articlesList = articles[chapter] || [];
+            articleContainer.innerHTML = articlesList.map(article => `
+                <div class="section">
+                    <h2>${article.title}</h2>
+                    <p>${article.description}</p>
+                </div>
+            `).join('');
+        }
+
+        loadArticles(chapter);
+    </script>
+</body>
+</html>
