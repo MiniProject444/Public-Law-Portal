@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function fetchArticles369to392() {
+            const articles = [
+                { id: 369, title: "Article 369", description: "Article 369 empowered Parliament to legislate on matters related to the imposition of taxes on the income of corporations and income-tax in respect of the income of corporations. It was meant to address the needs of a growing economy and manage the fiscal responsibilities of the Union." },
+                { id: 370, title: "Article 370", description: "Article 370 provided special autonomous status to the state of Jammu and Kashmir. It allowed the state to have its own Constitution and administrative powers while remaining an integral part of India. This article was abrogated in August 2019, ending the special status of Jammu and Kashmir." },
+                { id: 371, title: "Article 371", description: "Article 371 grants special provisions to certain states for the protection and promotion of their distinct culture and language. It includes provisions for the creation of a regional council to address the needs of these states, ensuring their cultural and administrative needs are met." },
+                { id: 371, title: "Article 371A", description: "Article 371A provides special provisions for the state of Nagaland. It allows for the protection of Nagaland's customary laws and practices and ensures the representation of Nagas in state administration. It also mandates the creation of a regional council for the development of Nagaland." },
+                { id: 372, title: "Article 372", description: "Article 372 provides for the continuation of laws that were in force before the commencement of the Constitution. It ensures that existing laws remain applicable until they are amended or repealed by the new constitutional framework." },
+                { id: 373, title: "Article 373", description: "Article 373 empowers Parliament to make laws for the implementation of the provisions of the Constitution. It provides the legislative authority to address any issues or needs arising from the Constitution's implementation." },
+                { id: 374, title: "Article 374", description: "Article 374 relates to the establishment of High Courts in certain states and provides for the appointment of judges to these courts. It ensures the effective functioning of the judiciary at the state level." },
+                { id: 375, title: "Article 375", description: "Article 375 outlines the powers and functions of the Chief Justice of a High Court. It provides for the administrative responsibilities and authority of the Chief Justice in the state judiciary." },
+                { id: 376, title: "Article 376", description: "Article 376 provides for the appointment of the judges of the High Court and their conditions of service. It ensures the independence and impartiality of the judiciary by setting standards for the appointment and tenure of judges." },
+                { id: 377, title: "Article 377", description: "Article 377 deals with the powers of the President to appoint additional judges to the High Court in case of a temporary increase in workload. It allows for the temporary augmentation of judicial capacity to address urgent needs." },
+                { id: 378, title: "Article 378", description: "Article 378 provides for the establishment of a High Court in the Union Territories if required. It ensures that the judicial system can cater to the needs of the Union Territories effectively." },
+                { id: 379, title: "Article 379", description: "Article 379 relates to the powers and functions of the High Court in relation to the Union Territories. It ensures that the High Court's jurisdiction extends to these territories for the administration of justice." },
+                { id: 380, title: "Article 380", description: "Article 380 provides for the appointment of a Chief Justice for the High Court of a Union Territory. It outlines the process for appointing the head of the judiciary in these territories." },
+                { id: 381, title: "Article 381", description: "Article 381 deals with the conditions of service of the Chief Justice of a High Court in a Union Territory. It ensures that the Chief Justice's tenure and remuneration are consistent with constitutional provisions." },
+                { id: 382, title: "Article 382", description: "Article 382 provides for the jurisdiction and powers of the High Court in Union Territories. It ensures that the High Court can exercise its functions and authority in these regions as needed." },
+                { id: 383, title: "Article 383", description: "Article 383 relates to the functions of the High Court regarding the appointment of district judges and the conditions of their service. It ensures that the judiciary at the district level is effectively managed." },
+                { id: 384, title: "Article 384", description: "Article 384 outlines the procedures for the retirement of judges of the High Court. It ensures that the retirement process is in accordance with the provisions of the Constitution." },
+                { id: 385, title: "Article 385", description: "Article 385 provides for the continuation of laws in force in the Union Territories before the commencement of the Constitution. It ensures that existing laws remain applicable until they are amended or repealed." },
+                { id: 386, title: "Article 386", description: "Article 386 deals with the provision of services for the Union Territories, including administrative and judicial services. It ensures that necessary services are provided to these regions." },
+                { id: 387, title: "Article 387", description: "Article 387 provides for the establishment of institutions and organizations in the Union Territories to support governance and administration. It ensures that these regions have the necessary infrastructure for effective functioning." },
+                { id: 388, title: "Article 388", description: "Article 388 relates to the special provisions for the administration of certain regions in the Union Territories. It ensures that these regions are managed according to their specific needs and circumstances." },
+                { id: 389, title: "Article 389", description: "Article 389 provides for the establishment of a law commission to review and recommend changes to existing laws in the Union Territories. It ensures that laws are updated and aligned with current needs." },
+                { id: 390, title: "Article 390", description: "Article 390 deals with the administration of justice in the Union Territories, including the appointment of judges and the establishment of courts. It ensures that the judicial system is effectively implemented." },
+                { id: 391, title: "Article 391", description: "Article 391 relates to the jurisdiction and powers of the High Court in Union Territories. It ensures that the High Court has the authority to handle cases and matters related to these regions." },
+                { id: 392, title: "Article 392", description: "Article 392 provides for the appointment of a High Court judge to address specific needs and challenges in the Union Territories. It ensures that the judiciary can meet the demands of these regions effectively." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles369to392;
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Temporary, Transitional and Special Provisions</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>

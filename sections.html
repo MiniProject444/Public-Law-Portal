@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitutional Laws</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 220px; /* Adjusted size */
+            background: none; /* Remove background shadow */
+            margin-right: 0%;
+        }
+
+        h1 {
+            margin: 120px 0 20px 0; /* Adjusted margin to avoid overlap with navbar */
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function fetchArticles() {
+            const articles = [
+                { id: 1, title: "Part I - The Union and its Territory", description: "Articles 1-4: Defines the Union of India and its territories, powers of Parliament to admit new states, and the adjustment of state boundaries.", link: "index1.html" },
+                { id: 2, title: "Part II - Citizenship", description: "Articles 5-11: Provides for the determination of citizenship at the commencement of the Constitution and stipulates the conditions for acquiring and losing Indian citizenship.", link: "index2.html" },
+                { id: 3, title: "Part III - Fundamental Rights", description: "Articles 12-35: Enshrines fundamental rights for individuals, including right to equality, freedom of speech, protection against discrimination, etc.", link: "index3.html" },
+                { id: 4, title: "Part IV - Directive Principles of State Policy", description: "Articles 36-51: Outlines the directive principles that guide the State in the governance of the country, aiming at socio-economic justice.", link: "index4.html" },
+                { id: 5, title: "Part IVA - Fundamental Duties", description: "Article 51A: Lists the fundamental duties of every citizen, including respect for the Constitution, preservation of the national heritage, and promotion of harmony.", link: "index4a.html" },
+                { id: 6, title: "Part V - The Union", description: "Articles 52-151: Covers the structure and functions of the Union Government, including the President, Parliament, and the Council of Ministers.", link: "index5.html" },
+                { id: 7, title: "Part VI - The States", description: "Articles 152-237: Details the organization of State Governments, including the Governor, State Legislature, and the relationship between the State and the Union.", link: "index6.html" },
+                { id: 8, title: "Part VII - The States in Part B of the First Schedule", description: "Article 238: Was concerned with the administration of Part B states but was omitted by the Constitution (Seventh Amendment) Act, 1956.", link: "index7.html" },
+                { id: 9, title: "Part VIII - The Union Territories", description: "Articles 239-242: Addresses the administration of Union Territories, including the powers and duties of the administrators.", link: "index8.html" },
+                { id: 10, title: "Part IX - The Panchayats", description: "Articles 243-243O: Provides for the creation and functioning of Panchayats, local self-government bodies at the village, intermediate, and district levels.", link: "index9.html" },
+                { id: 11, title: "Part IXA - The Municipalities", description: "Articles 243P-243ZG: Establishes the framework for Municipalities, covering urban local self-government in cities and towns.", link: "index9a.html" },
+                { id: 12, title: "Part IXB - The Cooperative Societies", description: "Articles 243ZH-243ZT: Deals with the cooperative societies, their formation, and regulation.", link: "index9b.html" },
+                { id: 13, title: "Part X - The Scheduled and Tribal Areas", description: "Articles 244-244A: Provides special provisions for the administration and governance of Scheduled Areas and Tribal Areas.", link: "index10.html" },
+                { id: 14, title: "Part XI - Relations Between the Union and the States", description: "Articles 245-263: Outlines the distribution of powers and responsibilities between the Union and the States, including legislative and executive relations.", link: "index11.html" },
+                { id: 15, title: "Part XII - Finance, Property, Contracts and Suits", description: "Articles 264-300A: Governs the financial relations between the Union and the States, the management of property, and contracts.", link: "index12.html" },
+                { id: 16, title: "Part XIII - Trade, Commerce and Intercourse within the Territory of India", description: "Articles 301-307: Provides for the regulation of trade, commerce, and intercourse within India and prohibits restrictions on the movement of goods.", link: "index13.html" },
+                { id: 17, title: "Part XIV - Services Under the Union and the States", description: "Articles 308-323: Covers the provisions related to public services, including the recruitment, conditions of service, and the powers of the Public Service Commissions.", link: "index14.html" },
+                { id: 18, title: "Part XIVA - Tribunals", description: "Articles 323A-323B: Provides for the establishment of administrative tribunals and other tribunals to resolve disputes and adjudicate on matters related to public services.", link: "index14a.html" },
+                { id: 19, title: "Part XV - Elections", description: "Articles 324-329A: Governs the electoral process in India, including the conduct of elections, the Election Commission, and electoral rights.", link: "index15.html" },
+                { id: 20, title: "Part XVI - Special Provisions Relating to Certain Classes", description: "Articles 330-342: Provides for the representation of certain classes, such as Scheduled Castes and Scheduled Tribes, in the Parliament and State Legislatures.", link: "index16.html" },
+                { id: 21, title: "Part XVII - Official Language", description: "Articles 343-351: Deals with the official language of the Republic of India, including the language of the Union and the use of Hindi and English.", link: "index17.html" },
+                { id: 22, title: "Part XVIII - Emergency Provisions", description: "Articles 352-360: Provides for the proclamation of emergency conditions, including national emergency, state emergency, and financial emergency.", link: "index18.html" },
+                { id: 23, title: "Part XIX - Miscellaneous", description: "Articles 361-367: Includes various provisions such as the protection of the President and Governors, and the bar on interference by courts in certain matters.", link: "index19.html" },
+                { id: 24, title: "Part XX - Amendment of the Constitution", description: "Article 368: Provides the procedure for the amendment of the Constitution by Parliament.", link: "index20.html" },
+                { id: 25, title: "Part XXI - Temporary, Transitional and Special Provisions", description: "Articles 369-392: Contains temporary, transitional, and special provisions, including the special provisions for certain states and territories.", link: "index21.html" },
+                { id: 26, title: "Part XXII - Short Title, Commencement, Authoritative Text in Hindi and Repeals", description: "Articles 393-395: Specifies the short title of the Constitution, its commencement, the authoritative text in Hindi, and the repeals of previous laws.", link: "index22.html" }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <p>${article.description}</p>
+                    <button onclick="window.location.href='${article.link}'">View</button>
+                `;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles; // Call fetchArticles when the page loads
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>The Indian Constitution</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>

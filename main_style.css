@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('background_1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  color: #fff;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+}
+
+.logo {
+  width: 220px;
+  position: absolute;
+  top: -230px;
+  left: 10px;
+}
+
+.nav-buttons {
+  position: absolute;
+  top: -200px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-buttons .btn, .center-btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: rgb(247, 247, 247);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-buttons .btn:hover, .center-btn:hover {
+  background-color: #0056b3;
+}
+
+.title {
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  margin-top: 220px; /* Adjusted margin to avoid overlap with navbar */
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgb(0, 2, 33);
+  color: #ffffff; /* Blue color for title */
+}
+
+.center-btn {
+  display: block;
+  margin: 20px auto;
+}
+
+.preamble-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 10px;
+  text-shadow: 1px 1px 2px rgb(12, 0, 0);
+  color: #FFD700; /* Light goldenrod for text */
+}

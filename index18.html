@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function fetchArticles352to360() {
+            const articles = [
+                { id: 352, title: "Article 352", description: "Article 352 empowers the President of India to declare a state of emergency if he/she believes that the security of India or any part of it is threatened by war or external aggression or armed rebellion. This proclamation allows the central government to take over the state administration." },
+                { id: 353, title: "Article 353", description: "Article 353 provides for the powers of the President to act in the event of a failure of constitutional machinery in a state. This includes the ability to dissolve the state legislature, suspend fundamental rights, and impose central rule under Article 356." },
+                { id: 354, title: "Article 354", description: "Article 354 allows the President to take over the administration of a state if the government fails to comply with the constitutional provisions. It empowers the President to make necessary arrangements to ensure the state adheres to the Constitution." },
+                { id: 355, title: "Article 355", description: "Article 355 mandates the President to ensure that the government of every state is carried out according to the provisions of the Constitution. It places a duty on the President to protect the integrity and sovereignty of India." },
+                { id: 356, title: "Article 356", description: "Article 356 provides for the imposition of President’s Rule in a state if the President believes that the government in the state cannot be carried on according to the provisions of the Constitution. This allows the central government to take direct control of the state's administration." },
+                { id: 357, title: "Article 357", description: "Article 357 deals with the powers of the President to continue with the existing laws and ordinances of the state when President’s Rule is imposed. It ensures that the state's legal framework remains in force during such emergencies." },
+                { id: 358, title: "Article 358", description: "Article 358 suspends the enforcement of Fundamental Rights, specifically the rights to freedom of speech and expression, during the emergency declared under Article 352 due to war or external aggression. It allows for the central government to impose restrictions on these rights." },
+                { id: 359, title: "Article 359", description: "Article 359 allows for the suspension of the enforcement of Fundamental Rights during the emergency declared under Article 356. It permits the central government to restrict or suspend these rights, except for those related to the right to life and personal liberty." },
+                { id: 360, title: "Article 360", description: "Article 360 provides for the declaration of a financial emergency if the President believes that the financial stability or credit of India is threatened. This allows the central government to take measures to address the financial crisis and ensure economic stability." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles352to360;
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Emergency Provisions</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>

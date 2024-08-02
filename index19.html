@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function fetchArticles381to367() {
+            const articles = [
+                { id: 361, title: "Article 361", description: "Article 361 provides for the protection of the President and Governors from legal proceedings while they are in office. It ensures that they cannot be sued or prosecuted for actions taken in their official capacity, thus providing them with legal immunity for the performance of their duties." },
+                { id: 362, title: "Article 362", description: "Article 362 deals with the special provisions for the representation of the Anglo-Indian community in the legislative assemblies of certain states. It provides for the nomination of members of the Anglo-Indian community if they are not adequately represented in the state legislature." },
+                { id: 363, title: "Article 363", description: "Article 363 provides for the jurisdiction of the Supreme Court over disputes between states or between the Union and states. It also outlines the procedure for the Supreme Court to adjudicate on such disputes, ensuring the resolution of conflicts in a legal manner." },
+                { id: 364, title: "Article 364", description: "Article 364 empowers the President to constitute a Commission to investigate the conditions of Scheduled Castes and Scheduled Tribes. This Commission is tasked with reviewing their socio-economic conditions and recommending measures to improve their status." },
+                { id: 365, title: "Article 365", description: "Article 365 provides for the appointment of a Commission to investigate the administration of Scheduled Areas and the welfare of Scheduled Tribes. It allows the President to establish this Commission to assess and report on the functioning of the administration in these areas." },
+                { id: 366, title: "Article 366", description: "Article 366 defines the terms 'Scheduled Castes' and 'Scheduled Tribes' as used in the Constitution. It outlines the criteria for identifying these communities and provides the basis for the legal and administrative provisions related to their representation and welfare." },
+                { id: 367, title: "Article 367", description: "Article 367 provides for the interpretation of certain provisions of the Constitution related to the administration of Scheduled Areas and the welfare of Scheduled Tribes. It offers guidance on how these provisions should be understood and implemented to ensure effective governance." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+        window.onload = fetchArticles381to367;
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Miscellaneous</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>
