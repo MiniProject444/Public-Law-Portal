@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Citizenship</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        function fetchArticles() {
+            const articles = [
+                { id: 5, title: "Article 5", description: "Article 5 of the Indian Constitution deals with the citizenship of India at the commencement of the Constitution. It provides that every person who was a citizen of India at the commencement of the Constitution shall continue to be a citizen of India, subject to the provisions of any law that Parliament may make regarding citizenship. This article establishes the initial criteria for Indian citizenship." },
+                { id: 6, title: "Article 6", description: "Article 6 provides for the citizenship of persons who have migrated to India from Pakistan. It stipulates that a person who has migrated to India from Pakistan before July 19, 1948, and has been residing in India continuously since that date shall be deemed to be a citizen of India. It also includes provisions for the citizenship of those who migrated after July 19, 1948, and have been residing in India continuously for a period specified by law. This article addresses the citizenship status of individuals from certain migrations." },
+                { id: 7, title: "Article 7", description: "Article 7 of the Indian Constitution provides for the citizenship of persons who migrated to Pakistan but later returned to India. It stipulates that any person who has migrated to Pakistan after March 1, 1947, and later returned to India will be deemed to be a citizen of India if they have been residing in India continuously since their return. This article ensures the continuity of citizenship for those who moved between India and Pakistan." },
+                { id: 8, title: "Article 8", description: "Article 8 deals with the citizenship of persons of Indian origin residing outside India. It provides that any person of Indian origin who is a citizen of a foreign country may register themselves as an Indian citizen if they meet the requirements set by law. This article addresses the citizenship rights of the Indian diaspora and provides a mechanism for them to retain or acquire Indian citizenship." },
+                { id: 9, title: "Article 9", description: "Article 9 of the Indian Constitution states that no person shall be a citizen of India if they voluntarily acquire the citizenship of another country. It emphasizes that Indian citizenship is lost if an individual acquires citizenship of another country, ensuring that dual citizenship is not permitted under Indian law." },
+                { id: 10, title: "Article 10", description: "Article 10 of the Indian Constitution provides that every person who is a citizen of India as per the provisions of the Constitution shall continue to be a citizen of India, provided they do not voluntarily acquire citizenship of another country. This article reaffirms the continuity of citizenship for Indian citizens and sets the conditions under which Indian citizenship may be retained or lost." },
+                { id: 11, title: "Article 11", description: "Article 11 empowers Parliament to regulate the acquisition and termination of citizenship by law. It provides the authority for Parliament to make laws regarding the citizenship status of individuals and to establish procedures for acquiring or terminating citizenship. This article grants Parliament the power to address changes in citizenship laws and procedures as necessary." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles; // Call fetchArticles when the page loads
+    </script>
+</body>
+</html>

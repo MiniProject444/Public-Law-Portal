@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>The States in Part B of the First Schedule</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        function fetchArticle238() {
+            const article = {
+                id: 238,
+                title: "Article 238",
+                description: "Article 238 of the Indian Constitution was related to the application of provisions of Part VI to certain States. It was omitted by the Constitution (Seventh Amendment) Act, 1956. Before its omission, Article 238 provided for the administration of Part B states and laid down the framework for their governance. The article essentially extended the provisions of Part VI, which deals with the states' executive, to certain states that were not originally included."
+            };
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            const div = document.createElement('div');
+            div.className = 'section';
+            div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+            articleContainer.appendChild(div);
+        }
+        window.onload = fetchArticle238; // Call fetchArticles when the page loads
+
+    </script>
+</body>
+</html>

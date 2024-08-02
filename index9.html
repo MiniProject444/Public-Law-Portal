@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        // Define the function globally
+        function fetchArticles() {
+            console.log("fetchArticles function called"); // Debug log
+            const articles = [
+                { id: 243, title: "Article 243", description: "Article 243 of the Indian Constitution provides for the Constitution of Panchayats in villages and specifies their powers, authority, and responsibilities. This article ensures the establishment of village panchayats as self-governing institutions." },
+                { id: 244, title: "Article 243A", description: "Article 243A grants the Gram Sabha (a body consisting of persons registered in the electoral rolls relating to a village) the power to perform such functions and exercise such powers as the Legislature of a State may provide by law." },
+                { id: 245, title: "Article 243B", description: "Article 243B deals with the Constitution of Panchayats at the village, intermediate, and district levels in accordance with the provisions of Part IX of the Constitution." },
+                { id: 246, title: "Article 243C", description: "Article 243C provides for the composition of Panchayats and the manner of election of members to such Panchayats." },
+                { id: 247, title: "Article 243D", description: "Article 243D provides for the reservation of seats for Scheduled Castes, Scheduled Tribes, and women in Panchayats." },
+                { id: 248, title: "Article 243E", description: "Article 243E specifies the duration of Panchayats and the conditions under which they can be dissolved." },
+                { id: 249, title: "Article 243F", description: "Article 243F outlines the disqualifications for membership in Panchayats." },
+                { id: 250, title: "Article 243G", description: "Article 243G grants Panchayats the powers, authority, and responsibilities to function as institutions of self-government." },
+                { id: 251, title: "Article 243H", description: "Article 243H deals with the powers of Panchayats to impose taxes and levy fees." },
+                { id: 252, title: "Article 243I", description: "Article 243I provides for the Constitution of a Finance Commission to review the financial position of Panchayats and to make recommendations regarding the distribution of funds between the State and Panchayats." },
+                { id: 253, title: "Article 243J", description: "Article 243J mandates the maintenance of accounts and auditing of Panchayat funds." },
+                { id: 254, title: "Article 243K", description: "Article 243K provides for the Constitution of a State Election Commission for the conduct of elections to Panchayats." },
+                { id: 255, title: "Article 243L", description: "Article 243L extends the provisions of Part IX of the Constitution to Union Territories." },
+                { id: 256, title: "Article 243M", description: "Article 243M exempts certain areas and states from the application of the provisions of Part IX of the Constitution." },
+                { id: 257, title: "Article 243N", description: "Article 243N provides for the continuation of existing laws and Panchayats until new laws are enacted under Part IX." },
+                { id: 258, title: "Article 243O", description: "Article 243O bars interference by courts in electoral matters related to Panchayats." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+            console.log("Articles appended"); // Debug log
+        }
+
+        // Attach the function to the global window object
+        window.onload = fetchArticles; // Call fetchArticles when the page loads
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>The Panchayats</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>

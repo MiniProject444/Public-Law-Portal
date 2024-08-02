@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Directive Principles of State Policy</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        function fetchArticles() {
+            const articles = [
+                { id: 36, title: "Article 36", description: "Article 36 defines 'State' as it applies to Part IV of the Constitution, which deals with the Directive Principles of State Policy. It outlines the entities that will be covered under these principles, including the government and authorities within the territory of India." },
+                { id: 37, title: "Article 37", description: "Article 37 clarifies that the Directive Principles of State Policy are fundamental in the governance of the country. However, these principles are not justiciable; they are not enforceable by any court, but they are intended to guide the State in making laws and policies." },
+                { id: 38, title: "Article 38", description: "Article 38 directs the State to promote the welfare of the people by securing and protecting a social order in which justice—social, economic, and political—shall inform all institutions of the national life." },
+                { id: 39, title: "Article 39", description: "Article 39 mandates that the State shall direct its policy towards securing that all citizens have the right to an adequate means of livelihood and that economic inequality is minimized. It also includes directives to ensure that children are not abused and that childhood and youth are protected against exploitation." },
+                { id: 40, title: "Article 40", description: "Article 40 calls for the organization of village panchayats and grants them the responsibility to serve as units of self-government. It emphasizes the need to empower local self-governance and ensure grassroots democracy." },
+                { id: 41, title: "Article 41", description: "Article 41 directs the State to provide for public assistance in case of unemployment, old age, sickness, and disablement. It emphasizes the need for social security measures and welfare programs to support those in need." },
+                { id: 42, title: "Article 42", description: "Article 42 directs the State to make provision for securing just and humane conditions of work and for maternity relief. It aims to protect workers' rights and ensure that workers receive fair treatment and support during maternity." },
+                { id: 43, title: "Article 43", description: "Article 43 mandates the State to ensure that workers are provided with a living wage, which should enable them to lead a life of dignity. It seeks to improve the standard of living and working conditions of workers." },
+                { id: 44, title: "Article 44", description: "Article 44 advocates for the adoption of a Uniform Civil Code throughout India. It aims to unify the personal laws relating to marriage, divorce, inheritance, and adoption among different religions." },
+                { id: 45, title: "Article 45", description: "Article 45 directs the State to provide free and compulsory education to all children until they complete the age of fourteen. It emphasizes the importance of education and aims to ensure that every child has access to schooling." },
+                { id: 46, title: "Article 46", description: "Article 46 promotes the educational and economic interests of Scheduled Castes, Scheduled Tribes, and other weaker sections of society. It aims to improve their conditions and provide them with opportunities for advancement." },
+                { id: 47, title: "Article 47", description: "Article 47 places the duty on the State to improve public health and ensure the provision of facilities for the prevention and control of diseases. It emphasizes the importance of health and wellness in public policy." },
+                { id: 48, title: "Article 48", description: "Article 48 directs the State to organize agriculture and animal husbandry on modern and scientific lines. It seeks to promote sustainable agricultural practices and improve livestock management." },
+                { id: 49, title: "Article 49", description: "Article 49 provides for the protection of monuments and places of historical importance. It emphasizes the need to preserve India's cultural heritage and protect historical sites." },
+                { id: 50, title: "Article 50", description: "Article 50 directs the State to separate the judiciary from the executive in the public services. It aims to ensure the independence of the judiciary and prevent any undue influence from the executive branch." },
+                { id: 51, title: "Article 51", description: "Article 51 promotes international peace and security and encourages the State to foster respect for international law. It aims to contribute to global harmony and support peaceful coexistence among nations." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles; // Call fetchArticles when the page loads
+
+    </script>
+</body>
+</html>

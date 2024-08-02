@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        // Define the function globally
+        function fetchArticles() {
+            console.log("fetchArticles function called"); // Debug log
+            const articles = [
+                
+                {
+                    id: 239,
+                    title: "Article 239",
+                    description: "Article 239 of the Indian Constitution deals with the administration of Union Territories. It provides that every Union Territory shall be administered by the President through an administrator appointed by him. The article outlines the framework for the governance of Union Territories and the role of the administrator."
+                },
+                {
+                    id: 2391,
+                    title: "Article 239A",
+                    description: "Article 239A provides for the creation of a Legislative Assembly for the Union Territory of Puducherry. It grants the Legislative Assembly the power to make laws with respect to matters enumerated in the State List or the Concurrent List. This article establishes a legislative framework for the Union Territory, allowing for local governance."
+                },
+                {
+                    id: 2392,
+                    title: "Article 239AA",
+                    description: "Article 239AA grants special provisions for the National Capital Territory of Delhi. It provides for a Legislative Assembly and a Council of Ministers for Delhi. The article specifies the powers and functions of the Legislative Assembly and the Council of Ministers, and outlines the role of the Lieutenant Governor in the administration of Delhi."
+                },
+                {
+                    id: 2393,
+                    title: "Article 239AB",
+                    description: "Article 239AB provides the power to the President to suspend the operation of any provision of Article 239AA in case of a failure of constitutional machinery in the National Capital Territory of Delhi. This article grants the President the authority to take necessary measures to ensure the proper functioning of the government in Delhi."
+                },
+                {
+                    id: 240,
+                    title: "Article 240",
+                    description: "Article 240 of the Indian Constitution deals with the power of the President to make regulations for certain Union Territories. It grants the President the authority to make regulations for the peace, progress, and good governance of the Union Territories of Andaman and Nicobar Islands, Lakshadweep, Dadra and Nagar Haveli, Daman and Diu, and Pondicherry."
+                },
+                {
+                    id: 241,
+                    title: "Article 241",
+                    description: "Article 241 of the Indian Constitution provides for the establishment of High Courts for Union Territories. It allows Parliament to extend the jurisdiction of a High Court to a Union Territory or create a High Court for a Union Territory. This article ensures that Union Territories have access to the judicial system and proper legal administration."
+                },
+                {
+                    id: 242,
+                    title: "Article 242",
+                    description: "Article 242 was originally related to the Coorg Legislative Assembly. However, it has been repealed by the Constitution (Seventh Amendment) Act, 1956. Before its repeal, Article 242 provided for the establishment and functions of the Coorg Legislative Assembly, outlining the legislative framework for the governance of Coorg."
+                }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+            console.log("Articles appended"); // Debug log
+        }
+
+        // Attach the function to the global window object
+        window.onload = fetchArticles; // Call fetchArticles when the page loads
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>The Union Territories</h1>
+    <div id="articleContainer"></div>
+</body>
+</html>

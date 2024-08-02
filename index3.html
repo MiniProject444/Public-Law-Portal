@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background%20(2).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            color: #fff;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 10; /* Ensure navbar is on top */
+        }
+
+        .logo {
+            height: 300px; /* Increased size */
+            margin-left: 20px;
+            background: none; /* Remove background shadow */
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 5px solid #3f51b5;
+            color: #000;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo2.png" class="logo" alt="Logo">
+    </div>
+
+    <h1>Fundamental Rights</h1>
+    <div id="articleContainer"></div>
+
+    <script>
+        function fetchArticles() {
+            const articles = [
+                { id: 12, title: "Article 12", description: "Article 12 defines the term 'State' as used in the Constitution. It includes the government and Parliament of India, as well as the government and legislature of each state, and all local authorities and other authorities within the territory of India. This article provides clarity on who constitutes the State for the purpose of fundamental rights." },
+                { id: 13, title: "Article 13", description: "Article 13 provides that all laws that are inconsistent with or in derogation of the fundamental rights guaranteed by the Constitution shall be void. It establishes that any law or ordinance that contravenes fundamental rights will be declared unconstitutional and invalid." },
+                { id: 14, title: "Article 14", description: "Article 14 guarantees the right to equality before the law and equal protection of the laws. It prohibits discrimination by the State on grounds of religion, race, caste, sex, or place of birth, ensuring that all individuals are treated equally and fairly by the law." },
+                { id: 15, title: "Article 15", description: "Article 15 prohibits discrimination by the State on grounds of religion, race, caste, sex, or place of birth. It ensures that no citizen is denied access to public places or services on these grounds, promoting equality and preventing discrimination in public life." },
+                { id: 16, title: "Article 16", description: "Article 16 provides for equality of opportunity in public employment. It ensures that no citizen is discriminated against or denied employment on the grounds of religion, race, caste, sex, or place of birth, and provides for reservations in certain cases." },
+                { id: 17, title: "Article 17", description: "Article 17 abolishes 'untouchability' and forbids its practice in any form. It declares untouchability as a social evil and ensures that individuals are not subjected to discrimination or social exclusion based on their caste or untouchability status." },
+                { id: 18, title: "Article 18", description: "Article 18 abolishes titles and distinguishes between titles and academic or honorary distinctions. It prohibits the State from granting titles to individuals and ensures that no person is addressed or recognized by a title that indicates superiority or privilege." },
+                { id: 19, title: "Article 19", description: "Article 19 guarantees certain freedoms to all citizens, including freedom of speech and expression, freedom to assemble peacefully, freedom to form associations or unions, freedom to move freely throughout the territory of India, freedom to reside and settle in any part of India, and freedom to practice any profession or occupation." },
+                { id: 20, title: "Article 20", description: "Article 20 provides protection in respect of conviction for offenses. It guarantees that no person shall be convicted of an offense except for violations of laws in force at the time of the commission of the offense. It also provides protection against double jeopardy and self-incrimination." },
+                { id: 21, title: "Article 21", description: "Article 21 guarantees the protection of life and personal liberty. It ensures that no person shall be deprived of their life or personal liberty except according to the procedure established by law, thereby safeguarding the right to life and personal freedom." },
+                { id: 22, title: "Article 22", description: "Article 22 provides for protection against arrest and detention in certain cases. It ensures that no person shall be arrested without being informed of the grounds of arrest and provides the right to consult a legal practitioner and be produced before a magistrate within a specified period." },
+                { id: 23, title: "Article 23", description: "Article 23 prohibits human trafficking and forced labor. It ensures that no person is forced to work against their will and bans trafficking in human beings for any purpose, including forced labor and exploitation." },
+                { id: 24, title: "Article 24", description: "Article 24 prohibits the employment of children below the age of fourteen in hazardous industries and factories. It aims to protect children from exploitation and ensure their health and well-being by restricting child labor in certain sectors." },
+                { id: 25, title: "Article 25", description: "Article 25 guarantees freedom of conscience and free profession, practice, and propagation of religion. It allows individuals to freely practice, profess, and propagate their religion, subject to public order, morality, and health." },
+                { id: 26, title: "Article 26", description: "Article 26 provides for the freedom to manage religious affairs. It ensures that religious denominations have the right to establish and maintain institutions for religious and charitable purposes and manage their own affairs in matters of religion." },
+                { id: 27, title: "Article 27", description: "Article 27 stipulates that no person shall be compelled to pay taxes for the promotion or maintenance of any particular religion. It ensures that religious taxes are not imposed on individuals and promotes the principle of secularism." },
+                { id: 28, title: "Article 28", description: "Article 28 prohibits religious instruction in state-funded educational institutions. It ensures that no educational institution funded by the State shall impart religious instruction, maintaining the secular nature of state education." },
+                { id: 29, title: "Article 29", description: "Article 29 provides for the protection of the interests of minorities. It ensures that any section of citizens with a distinct language, script, or culture has the right to conserve its culture, language, or script." },
+                { id: 30, title: "Article 30", description: "Article 30 provides for the right of minorities to establish and administer educational institutions. It guarantees that religious and linguistic minorities have the right to establish and run their own educational institutions and receive assistance from the State." },
+                { id: 31, title: "Article 31", description: "Article 31 deals with the acquisition of property and compensation. It provides that no person shall be deprived of their property except by law, and ensures that adequate compensation is provided in case of property acquisition by the State." },
+                { id: 32, title: "Article 32", description: "Article 32 provides for the right to constitutional remedies. It allows individuals to move the Supreme Court for the enforcement of fundamental rights and ensures that any violation of these rights can be challenged in the highest court of the land." },
+                { id: 33, title: "Article 33", description: "Article 33 empowers Parliament to modify the application of fundamental rights to the armed forces and other disciplined services. It allows for the regulation of fundamental rights in these areas to ensure discipline and proper functioning." },
+                { id: 34, title: "Article 34", description: "Article 34 deals with the restriction of fundamental rights during martial law. It allows for the suspension of fundamental rights in areas affected by martial law and provides for the administration of justice in such areas." },
+                { id: 35, title: "Article 35", description: "Article 35 provides that Parliament shall have the power to make laws for the enforcement of fundamental rights. It ensures that Parliament has the authority to enact laws and provide mechanisms for the implementation and protection of fundamental rights." }
+            ];
+
+            const articleContainer = document.getElementById('articleContainer');
+            articleContainer.innerHTML = ''; // Clear previous content
+
+            articles.forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'section';
+                div.innerHTML = `<h2>${article.title}</h2><p>${article.description}</p>`;
+                articleContainer.appendChild(div);
+            });
+        }
+
+        window.onload = fetchArticles; // Call fetchArticles when the page loads
+
+    </script>
+</body>
+</html>
