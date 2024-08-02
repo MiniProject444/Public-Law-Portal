@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(rgba(32, 30, 30, 0.5), rgba(21, 19, 19, 0.5)), url('Background\ \(2\).png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  color: #fff;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.logo {
+  width: 210px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.title {
+  font-family: 'Merriweather', serif;
+  font-size: 42px;
+  text-shadow: 2px 2px 4px rgb(0, 2, 33);
+  color: #ffffff; /* Blue color for title */
+  flex-grow: 1;
+  text-align: center;
+  margin-top: 160px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  text-decoration: none; /* Remove underline */
+  color: rgb(255, 255, 255); /* Set the text color */
+  padding: 8px 16px; /* Add some padding */
+  border: none; /* Remove border */
+  background-color: #108a9d; /* Add background color */
+  cursor: pointer; /* Change cursor to pointer */
+  border-radius: 5px; /* Optional: add border radius for rounded corners */
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 50px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #083564; /* Change background color on hover */
+}
+
+.contact {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  align-items: center;
+  line-height: 1.6;
+  text-align: center;
+  color: #fdfdfd; /* White color for text */
+  margin: 0;
+  text-shadow: none;
+}
+
